@@ -1,1 +1,2 @@
-console.log('Hello World');
+export const name = 'Ann';
+console.log(name);
