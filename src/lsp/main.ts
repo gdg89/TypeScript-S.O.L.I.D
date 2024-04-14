@@ -1,20 +1,22 @@
 /**
- * OCP - Open Close Principle
- * Princípio do Aberto/Fechado (Open/Closed Principle):
- * Este princípio estabelece que as entidades de software, como classes, módulos e funções, devem ser abertas para extensão,
- * mas fechadas para modificação. Isso significa que o comportamento de uma entidade deve ser estendido sem alterar seu
- * código-fonte original.
+ * LSP - Liskov Substitution Principle
+ * Ele diz que você deve ser capaz de
+ * substituir qualquer instância de uma
+ * classe base por uma de suas classes
+ * derivadas sem alterar o comportamento
+ * esperado do programa.
+ *
+ * Exemplo: Se o meu programa espera um Animal, algodo tipo
+ * Cachorro(que herda de Animal) deve servir como qualquer outro
+ * Animal.
+ *
  */
 import { ShoppingCart } from './classes/shopping-cart';
 import { Order } from './classes/order';
 import { Messaging } from './services/messaging';
 import { Persistency } from './services/persistency';
 import { Product } from './classes/product';
-import {
-  FiftyPercentDiscount,
-  NoDiscount,
-  TenPercentDiscount,
-} from './classes/discount';
+import { FiftyPercentDiscount } from './classes/discount';
 
 const fiftyPrecentDiscount = new FiftyPercentDiscount();
 //const noDiscount = new NoDiscount();
