@@ -1,15 +1,10 @@
 /**
- * LSP - Liskov Substitution Principle
- * Ele diz que você deve ser capaz de
- * substituir qualquer instância de uma
- * classe base por uma de suas classes
- * derivadas sem alterar o comportamento
- * esperado do programa.
- *
- * Exemplo: Se o meu programa espera um Animal, algo do tipo
- * Cachorro(que herda de Animal) deve servir como qualquer outro
- * Animal.
- *
+ * Interface segregation prrinciple( Principio de segregação de Interface)
+ * Os Clientes não devem ser foçados a depender de interfaces ou membros abstratos que que não utilizam.
+ * 
+ * Customers should not forced to depend on interfaces or abstract members that they do not use.
+ * 
+
  */
 import { ShoppingCart } from './classes/shopping-cart';
 import { Order } from './classes/order';
