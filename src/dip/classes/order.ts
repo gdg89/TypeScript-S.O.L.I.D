@@ -1,19 +1,20 @@
 import { v4 as uuidV4 } from 'uuid';
 import { OrderStatus, OrderId } from './interfaces/order-types';
-import { ShoppingCart } from './shopping-cart';
-import { Messaging } from '../services/messaging';
-import { Persistency } from '../services/persistency';
-import { CustomerOrder } from './interfaces/customer-protocol';
+import { CustomerOrderProtocol } from './interfaces/customer-protocol';
+import { ShoppingCartProtocol } from './interfaces/shopping-cart-protocol';
+import { MessagingProtocol } from './interfaces/messagin-protocol';
+import { PersistencyProtocol } from './interfaces/persistency-protocol';
 
 export class Order {
   private _orderId: OrderId = uuidV4();
   private _orderStatus: OrderStatus = 'open';
 
   constructor(
-    private readonly cart: ShoppingCart,
-    private readonly messaging: Messaging,
-    private readonly persistency: Persistency,
-    private readonly customer: CustomerOrder,
+    //Dependencies
+    private readonly cart: ShoppingCartProtocol,
+    private readonly messaging: MessagingProtocol,
+    private readonly persistency: PersistencyProtocol,
+    private readonly customer: CustomerOrderProtocol,
   ) {}
 
   get status(): OrderStatus {
